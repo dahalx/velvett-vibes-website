@@ -36,15 +36,15 @@ export const ContactView: React.FC<ContactViewProps> = ({
         {/* Maps & Operating Hour Box */}
         <div className="lg:col-span-4 space-y-6">
           <div className="bg-brand-card border border-brand-gold/15 p-5 rounded-xl">
-            <h3 className="font-serif text-base font-bold text-brand-gold mb-3 uppercase tracking-wider">Studio Lounges</h3>
+            <h3 className="font-serif text-base font-bold text-brand-gold mb-3 uppercase tracking-wider">Studio Contact Info</h3>
             <div className="text-xs space-y-3 text-brand-cream-dim font-light leading-snug">
               <p className="flex items-start gap-2">
                 <MapPin size={14} className="text-brand-gold shrink-0 mt-0.5" />
-                <span>Kathmandu Head Studio & Production Suite, Nepal</span>
+                <span>Dallas Fort Worth Studio, Texas USA</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone size={14} className="text-brand-gold shrink-0" />
-                <span>+977 1-4XXXXXX (VVE Line)</span>
+                <span>+1-123-456-7890</span>
               </p>
               <p className="flex items-center gap-2">
                 <Mail size={14} className="text-brand-gold shrink-0" />
@@ -54,7 +54,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
           </div>
 
           <div className="bg-brand-card border border-brand-gold/15 p-5 rounded-xl">
-            <h3 className="font-serif text-base font-bold text-brand-gold mb-3 uppercase tracking-wider">Lounge Hours</h3>
+            <h3 className="font-serif text-base font-bold text-brand-gold mb-3 uppercase tracking-wider">Open Hours</h3>
             <div className="text-xs space-y-2 text-brand-cream-dim font-light">
               <p className="flex justify-between">
                 <span>Monday — Friday:</span> 
@@ -122,7 +122,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
                 <div className="bg-brand-wine/15 border border-brand-gold/30 p-4 rounded-xl">
                   <span className="font-mono text-[9px] text-brand-gold-bright tracking-widest uppercase block font-bold">SELECTED VALUE PACKAGE</span>
                   <span className="font-serif text-base text-brand-cream font-semibold mt-0.5 block">{formData.selectedPackage}</span>
-                  <p className="text-[10px] text-zinc-500 font-mono tracking-wide mt-1">* Note: Quote estimate has been cached with VVE lounge.</p>
+                  <p className="text-[10px] text-zinc-500 font-mono tracking-wide mt-1">* Note: Quote estimate has been cached with VVE Studio.</p>
                 </div>
               )}
 

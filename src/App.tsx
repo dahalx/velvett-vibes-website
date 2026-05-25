@@ -42,10 +42,6 @@ export default function App() {
   // Player controls
   const [currentEpisode, setCurrentEpisode] = useState<PodcastEpisode | null>(PODCAST_EPISODES[0]);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audioProgress, setAudioProgress] = useState(15);
-  const [volume, setVolume] = useState(70);
-  const [vuLeft, setVuLeft] = useState(20);
-  const [vuRight, setVuRight] = useState(25);
 
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
 
@@ -64,25 +60,6 @@ export default function App() {
   // Code Exporter
   const [copiedFile, setCopiedFile] = useState<string | null>(null);
 
-  // Natural bouncing VU Needle effects
-  useEffect(() => {
-    let animationId: number;
-    const animate = () => {
-      if (isPlaying) {
-        const leftNoise = Math.sin(Date.now() / 110) * 12 + Math.random() * 8;
-        const rightNoise = Math.cos(Date.now() / 140) * 12 + Math.random() * 8;
-        setVuLeft(Math.min(95, Math.max(15, 62 + leftNoise)));
-        setVuRight(Math.min(95, Math.max(15, 64 + rightNoise)));
-      } else {
-        setVuLeft(prev => prev > 5 ? prev - 1.5 : 4);
-        setVuRight(prev => prev > 5 ? prev - 1.5 : 5);
-      }
-      animationId = requestAnimationFrame(animate);
-    };
-    animationId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationId);
-  }, [isPlaying]);
-
   // Handle native audio player trigger
   useEffect(() => {
     if (audioPlayerRef.current) {
@@ -99,30 +76,7 @@ export default function App() {
   const handlePlayEpisode = (episode: PodcastEpisode) => {
     setCurrentEpisode(episode);
     setIsPlaying(true);
-    setAudioProgress(0);
-    
-    // Smooth scroll down to player on small devices for absolute visibility
-    if (window.innerWidth < 768) {
-      document.getElementById('mci-amplifier-receiver-bar')?.scrollIntoView({ behavior: 'smooth' });
-    }
   };
-
-  // Progress update timer
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setAudioProgress(prev => {
-          if (prev >= 100) {
-            setIsPlaying(false);
-            return 100;
-          }
-          return prev + 0.5;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying]);
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -147,7 +101,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-cream font-sans flex flex-col justify-between selection:bg-brand-gold selection:text-brand-bg relative pb-32">
+    <div className="min-h-screen bg-brand-bg text-brand-cream font-sans flex flex-col justify-between selection:bg-brand-gold selection:text-brand-bg relative pb-12">
       
       {/* TRADITIONAL NEPALESE CELEBRATION BACKDROP SYSTEM */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
@@ -500,148 +454,6 @@ export default function App() {
         </div>
       </main>
 
-      {/* MCINTOSH AMBER LIGHT TUBE RECEIVER CONSOLE - FOOTER CENTERPIECE */}
-      <footer 
-        id="mci-amplifier-receiver-bar" 
-        className="fixed bottom-0 left-0 right-0 border-t-2 border-brand-gold/45 bg-[#0e0e0e] py-4 px-4 md:px-6 shadow-[0_-5px_30px_rgba(0,0,0,0.6)] z-40"
-      >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          {/* Section 1: Track description and bouncing VU needles */}
-          <div className="flex items-center gap-4 w-full md:w-1/3 justify-between md:justify-start">
-            <div className="flex flex-col">
-              <span className="font-mono text-[9px] text-brand-gold tracking-widest uppercase font-bold">AMP VALVE INPUT</span>
-              <div className="bg-[#080808] h-10 px-3 py-1 rounded border border-brand-gold/20 flex flex-col justify-center min-w-40 max-w-48 text-center shadow-inner mt-1">
-                <span className="font-serif text-[11px] text-brand-gold-bright font-black tracking-widest text-glow truncate">
-                  {isPlaying ? currentEpisode?.title : "RECEIVER OFFLINE"}
-                </span>
-                <span className="font-mono text-[8px] text-brand-gold/70 block tracking-wider mt-0.5 whitespace-nowrap">
-                  {isPlaying ? currentEpisode?.series.toUpperCase() : "SLEEPING MODE"}
-                </span>
-              </div>
-            </div>
-
-            {/* Bouncing VU needles inside beautiful meter slots */}
-            <div className="flex gap-2 text-[8px] font-mono select-none">
-              <div>
-                <span className="text-zinc-500 block text-right font-bold leading-none select-none">L</span>
-                <div className="w-2.5 h-10 bg-[#0a0a0a] border border-brand-gold/20 rounded relative flex items-end">
-                  <div 
-                    className="w-full bg-gradient-to-t from-orange-850 to-amber-500 transition-all duration-150 rounded" 
-                    style={{ height: `${vuLeft}%` }}
-                  ></div>
-                </div>
-              </div>
-              <div>
-                <span className="text-zinc-500 block text-right font-bold leading-none select-none">R</span>
-                <div className="w-2.5 h-10 bg-[#0a0a0a] border border-brand-gold/20 rounded relative flex items-end">
-                  <div 
-                    className="w-full bg-gradient-to-t from-orange-850 to-amber-500 transition-all duration-150 rounded" 
-                    style={{ height: `${vuRight}%` }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Section 2: McIntosh knobs/wheel control triggers */}
-          <div className="flex flex-col items-center w-full md:w-1/3 gap-1">
-            <div className="flex items-center gap-5 justify-center">
-              <button 
-                id="receiver-prev-btn"
-                onClick={() => handlePlayEpisode(PODCAST_EPISODES[0])}
-                className="text-brand-cream-dim hover:text-brand-gold cursor-pointer transition select-none outline-none"
-              >
-                <SkipBack size={16} />
-              </button>
-              
-              {isPlaying ? (
-                <button
-                  id="receiver-pause-toggle-btn"
-                  onClick={() => setIsPlaying(false)}
-                  className="w-11 h-11 rounded-full bg-brand-wine/80 hover:bg-brand-wine border border-brand-gold/60 flex items-center justify-center cursor-pointer transition shadow-md shadow-brand-wine/25 text-brand-gold group outline-none"
-                >
-                  <Pause size={18} className="text-brand-gold group-hover:scale-105" />
-                </button>
-              ) : (
-                <button
-                  id="receiver-play-toggle-btn"
-                  onClick={() => {
-                    const fallback = currentEpisode || PODCAST_EPISODES[0];
-                    handlePlayEpisode(fallback);
-                  }}
-                  className="w-11 h-11 rounded-full bg-brand-gold hover:bg-brand-gold-bright flex items-center justify-center cursor-pointer transition shadow-md text-brand-bg group border border-brand-bg outline-none"
-                >
-                  <Play size={18} className="fill-brand-bg text-brand-bg relative left-0.5 group-hover:scale-105" />
-                </button>
-              )}
-
-              <button 
-                id="receiver-next-btn"
-                onClick={() => handlePlayEpisode(PODCAST_EPISODES[1])}
-                className="text-brand-cream-dim hover:text-brand-gold cursor-pointer transition select-none outline-none"
-              >
-                <SkipForward size={16} />
-              </button>
-            </div>
-
-            {/* Simulated progress channel bar */}
-            <div className="w-full flex items-center gap-2 px-2">
-              <span className="font-mono text-[9px] text-[#888888]">
-                {isPlaying ? `${Math.floor((audioProgress * 45.12) / 100)}m` : "0m"}
-              </span>
-              <div className="flex-grow h-1.5 bg-[#181818] border border-brand-gold/15 rounded-full overflow-hidden relative cursor-pointer">
-                <div 
-                  className="h-full bg-brand-gold-bright rounded-full relative" 
-                  style={{ width: `${audioProgress}%` }}
-                >
-                  <div className="absolute right-0 top-0 w-1.5 h-1.5 bg-brand-cream rounded-full shadow"></div>
-                </div>
-              </div>
-              <span className="font-mono text-[9px] text-[#888888]">45m</span>
-            </div>
-          </div>
-
-          {/* Section 3: Nostalgic dials for volume, bass and treble */}
-          <div className="hidden md:flex items-center justify-end gap-4 w-full md:w-1/3">
-            <div className="flex items-center gap-2">
-              <Volume2 size={14} className="text-brand-gold" />
-              <input 
-                id="receiver-volume-slider"
-                type="range"
-                min="0"
-                max="100"
-                value={volume}
-                onChange={(e) => {
-                  setVolume(Number(e.target.value));
-                  if (audioPlayerRef.current) {
-                    audioPlayerRef.current.volume = Number(e.target.value) / 100;
-                  }
-                }}
-                className="w-20 accent-brand-gold cursor-pointer" 
-              />
-              <span className="font-mono text-xs w-6 text-brand-gold text-right font-bold">{volume}%</span>
-            </div>
-
-            <div className="flex gap-2.5 items-center select-none watch-hide pl-4 border-l border-brand-gold/10">
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-brand-gold/45 bg-[#252525] relative flex items-center justify-center hover:rotate-45 transition duration-500">
-                  <div className="absolute top-0 w-0.5 h-1 bg-brand-gold"></div>
-                </div>
-                <span className="text-[7px] font-mono text-[#888888] mt-0.5">BASS</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-brand-gold/45 bg-[#252525] relative flex items-center justify-center hover:-rotate-12 transition duration-500">
-                  <div className="absolute top-0 w-0.5 h-1 bg-brand-gold"></div>
-                </div>
-                <span className="text-[7px] font-mono text-[#888888] mt-0.5">TREB</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </footer>
-
       {/* Hidden audio element holding actual track URLs */}
       <audio 
         ref={audioPlayerRef}
@@ -649,7 +461,6 @@ export default function App() {
         preload="auto"
         onEnded={() => {
           setIsPlaying(false);
-          setAudioProgress(100);
         }}
       />
 
