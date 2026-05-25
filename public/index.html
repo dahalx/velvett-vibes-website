@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvett Vibes - Pure Audio, Timeless Stories</title>
+  <!-- Google Fonts for Cormorant Garamond, Outfit, and JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CDN Tailwind CSS (v3 for stable script-based configuration) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Outfit"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#12100e',
+              card: '#1c1815',
+              gold: '#c4a47c',
+              'gold-bright': '#e5c49f',
+              wine: '#4c111e',
+              cream: '#f4efea',
+              'cream-dim': '#bbaea2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Premium glass aesthetics & custom scrolls */
+    body {
+      background-color: #12100e;
+      color: #f4efea;
+      font-family: 'Outfit', sans-serif;
+    }
+    .custom-glow {
+      box-shadow: 0 0 25px rgba(196, 164, 124, 0.15);
+    }
+    .text-glow {
+      text-shadow: 0 0 10px rgba(229, 196, 159, 0.2);
+    }
+    /* Smart Watch Optimized Styles */
+    @media (max-width: 240px) {
+      .watch-hide { display: none !important; }
+      body { font-size: 10px; padding: 4px; }
+      .watch-text-lg { font-size: 14px !important; }
+      .watch-pad { padding: 4px !important; }
+      .watch-grid { grid-template-columns: 1fr !important; }
+      h1 { font-size: 16px !important; }
+      h2 { font-size: 12px !important; }
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-brand-bg relative overflow-x-hidden min-h-screen flex flex-col justify-between">
+  
+  <!-- Top brand line with ambient glow -->
+  <header class="border-b border-brand-gold/10 bg-brand-bg/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Logo Container -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-card custom-glow group-hover:border-brand-gold-bright transition">
+          <span class="font-serif text-xl font-bold text-brand-gold text-glow group-hover:text-brand-gold-bright">VV</span>
+        </div>
+        <div>
+          <span class="font-serif text-lg tracking-wider font-semibold text-brand-cream block leading-tight">VELVETT VIBES</span>
+          <span class="font-mono text-[9px] tracking-widest text-brand-gold block uppercase leading-none">Studio Lounge</span>
+        </div>
+      </a>
+
+      <!-- Responsive Multi-Page Navigation -->
+      <nav class="flex flex-wrap justify-center gap-y-2 gap-x-5 md:gap-x-7 text-sm font-medium">
+        <a href="index.html" class="text-brand-gold-bright border-b border-brand-gold/80 pb-0.5 transition font-serif tracking-wider">Home</a>
+        <a href="about.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">About</a>
+        <a href="music-videos.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Music & Videos</a>
+        <a href="podcasts.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Podcasts</a>
+        <a href="services.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Services</a>
+        <a href="contact.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main Hero Layout -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-6 md:py-12">
+    
+    <!-- Hero Header Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-12">
+      
+      <!-- Greeting Headline and Mission -->
+      <div class="lg:col-span-7 bg-brand-card/60 p-6 md:p-10 rounded-2xl border border-brand-gold/15 flex flex-col justify-between watch-pad">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="h-px w-8 bg-brand-gold/60"></span>
+            <span class="font-mono text-xs text-brand-gold uppercase tracking-wider">Aesthetic Audio Hub</span>
+          </div>
+          
+          <h1 class="font-serif text-3xl md:text-5xl font-medium text-brand-cream leading-tight mb-4 tracking-tight">
+            Timeless sounds for a <br class="hidden md:block">
+            <span class="italic text-brand-gold">curated, modern life</span>.
+          </h1>
+          
+          <p class="text-brand-cream-dim text-base md:text-lg font-light leading-relaxed mb-6">
+            Welcome to <span class="text-brand-gold font-medium">Velvett Vibes</span>, where cozy ambiance, warm acoustic vinyl layers, and meaningful stories meet. Crafted specifically for mature minds who value quality depth over digital volume.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="podcasts.html" class="bg-brand-gold hover:bg-brand-gold-bright text-brand-bg text-sm px-6 py-3 rounded-full font-serif font-semibold tracking-wider transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:ring-2 focus:ring-brand-gold/50">
+            Listen to Podcasts
+          </a>
+          <a href="services.html" class="border border-brand-gold/40 hover:border-brand-gold hover:bg-brand-gold/5 text-brand-cream text-sm px-6 py-3 rounded-full font-serif tracking-wider transition">
+            Explore Services
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Experience Visual Mock -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-brand-card to-[#231b17] border border-brand-gold/20 p-6 rounded-2xl flex flex-col justify-between relative overflow-hidden group custom-glow">
+        <!-- Ambient lighting ring -->
+        <div class="absolute -right-20 -top-20 w-60 h-60 bg-brand-gold/10 rounded-full blur-3xl group-hover:bg-brand-gold/15 transition-all duration-700"></div>
+
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-mono text-[10px] bg-brand-wine/50 text-brand-gold border border-brand-gold/30 px-2.5 py-1 rounded-full uppercase tracking-wider">Now Playing</span>
+            <span class="font-mono text-[10px] text-brand-cream-dim">HIFI STEREO</span>
+          </div>
+
+          <!-- Album Art / Vinyl Disc Spin Mock -->
+          <div class="flex items-center gap-4 mb-6">
+            <div class="relative w-16 h-16 rounded-full border border-brand-gold/30 flex items-center justify-center bg-brand-bg group-hover:rotate-45 transition-transform duration-1000">
+              <div class="w-12 h-12 rounded-full bg-brand-card border-2 border-dashed border-brand-gold/20 flex items-center justify-center">
+                <div class="w-4 h-4 rounded-full bg-brand-gold"></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-brand-cream leading-tight">The Warm Resonance</h3>
+              <p class="text-xs text-brand-gold font-mono uppercase tracking-wider">Velvett Chill Lounge</p>
+            </div>
+          </div>
+
+          <!-- HTML5 Simple Audio with custom matching colors -->
+          <audio controls class="w-full opacity-90 accent-brand-gold scale-[0.95]" style="color-scheme: dark;">
+            <source src="https://actions.google.com/sounds/v1/ambient/music_lounge_jazz.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- Quick specs details -->
+        <div class="border-t border-brand-gold/10 pt-4 mt-6 flex justify-between items-center text-xs font-mono text-brand-cream-dim">
+          <span>AMBER VU METERS</span>
+          <span class="text-brand-gold animate-pulse">● TUBE VALVE ACTIVE</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CLIENT PHOTO - DEFINITIVE REQUIRED COMPONENT: velvett01.png -->
+    <div class="bg-brand-card border border-brand-gold/25 rounded-2xl p-4 md:p-8 mb-12 relative overflow-hidden shadow-2xl">
+      <div class="absolute inset-0 bg-brand-bg/40 backdrop-blur-xs flex flex-col justify-end p-6 md:p-10 pointer-events-none z-10">
+        <p class="font-mono text-[10px] text-brand-gold uppercase tracking-widest mb-1.5 watch-hide">Welcome Banner</p>
+        <p class="font-serif text-xl md:text-3xl text-brand-cream font-medium tracking-tight">Elegance in Every Dynamic Decibel</p>
+      </div>
+      <!-- Core Image Link requested by user -->
+      <img src="velvett01.png" alt="Velvett Vibes Luxury Setup" class="w-full h-44 md:h-72 object-cover rounded-xl border border-brand-gold/15 brightness-[0.75]" onerror="this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=1500';">
+    </div>
+
+    <!-- Quick Features Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 watch-grid">
+      
+      <!-- Video Teaser Card -->
+      <div class="bg-brand-card/40 border border-brand-gold/15 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-gold/40 transition">
+        <div>
+          <div class="text-brand-gold mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-film"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M7 3v18" /><path d="M17 3v18" /><path d="M3 7h4" /><path d="M3 17h4" /><path d="M17 17h4" /><path d="M17 7h4" /><path d="M3 12h18" /></svg>
+          </div>
+          <h2 class="font-serif text-xl font-medium text-brand-cream mb-2">Exclusive Music Videos</h2>
+          <p class="text-sm text-brand-cream-dim font-light leading-relaxed">
+            Beautifully shot session recordings of jazz quartets, soul vocals, and retro synthesizers playing in live acoustic rooms.
+          </p>
+        </div>
+        <a href="music-videos.html" class="mt-4 font-serif text-brand-gold text-sm hover:text-brand-gold-bright flex items-center gap-1.5 self-start">
+          Watch Videos &rarr;
+        </a>
+      </div>
+
+      <!-- Podcasts Card -->
+      <div class="bg-brand-card/40 border border-brand-gold/15 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-gold/40 transition">
+        <div>
+          <div class="text-brand-gold mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" x2="12" y1="19" y2="22" /></svg>
+          </div>
+          <h2 class="font-serif text-xl font-medium text-brand-cream mb-2">The Audio Podcast Catalog</h2>
+          <p class="text-sm text-brand-cream-dim font-light leading-relaxed">
+            Candid, cozy talk sessions. We sit down over wine or high-end whiskey to examine standard masterpieces, hi-fi analog setups, and lifetime stories.
+          </p>
+        </div>
+        <a href="podcasts.html" class="mt-4 font-serif text-brand-gold text-sm hover:text-brand-gold-bright flex items-center gap-1.5 self-start">
+          Browse Episodes &rarr;
+        </a>
+      </div>
+
+      <!-- Premium Services Card -->
+      <div class="bg-brand-card/40 border border-brand-gold/15 p-6 rounded-2xl flex flex-col justify-between hover:border-brand-gold/40 transition">
+        <div>
+          <div class="text-brand-gold mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
+          </div>
+          <h2 class="font-serif text-xl font-medium text-brand-cream mb-2">Analog Studio Productions</h2>
+          <p class="text-sm text-brand-cream-dim font-light leading-relaxed">
+            Record a lifetime memoir, restore static tape recordings, or master your music signals through authentic physical vacuum valve hardware.
+          </p>
+        </div>
+        <a href="services.html" class="mt-4 font-serif text-brand-gold text-sm hover:text-brand-gold-bright flex items-center gap-1.5 self-start">
+          Learn Services &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Timeless Review Section -->
+    <div class="bg-brand-wine/10 border border-brand-gold/10 p-6 md:p-8 rounded-2xl text-center relative max-w-3xl mx-auto custom-glow">
+      <span class="text-4xl font-serif text-brand-gold/40 block mb-2 font-black">&ldquo;</span>
+      <p class="font-serif text-lg md:text-xl text-brand-cream/90 italic leading-relaxed mb-4">
+        "Velvett Vibes is a digital sanctuary. For someone who recalls the physical beauty of vinyl and raw, real instrument dynamics, their shows make me feel at home again. Absolutely impeccable production."
+      </p>
+      <div class="font-mono text-xs text-brand-gold uppercase tracking-wider">
+        &mdash; Richard H., Age 54 (Classic & Blue Collector)
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Foot-rail matching branding specifications exactly -->
+  <footer class="border-t border-brand-gold/10 bg-brand-bg/95 py-6 mt-12 text-center text-xs font-mono text-brand-cream-dim">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-serif text-sm text-brand-cream font-semibold">&copy; 2026 VELVETT VIBES STUDIO. All rights reserved.</p>
+        <p class="text-[10px] text-brand-gold mt-1">Impeccable high-fidelity sound representation for every machine, OS, and smartwatch.</p>
+      </div>
+      <div class="flex gap-4">
+        <!-- Social links mock -->
+        <span class="hover:text-brand-gold cursor-pointer transition">Spotify</span>
+        <span>&bull;</span>
+        <span class="hover:text-brand-gold cursor-pointer transition">Apple Podcasts</span>
+        <span>&bull;</span>
+        <span class="hover:text-brand-gold cursor-pointer transition">YouTube</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

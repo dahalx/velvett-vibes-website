@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvett Vibes - Our Acoustics Story</title>
+  <!-- Google Fonts for Cormorant Garamond, Outfit, and JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CDN Tailwind CSS (v3 for stable script-based configuration) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Outfit"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#12100e',
+              card: '#1c1815',
+              gold: '#c4a47c',
+              'gold-bright': '#e5c49f',
+              wine: '#4c111e',
+              cream: '#f4efea',
+              'cream-dim': '#bbaea2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Premium glass aesthetics & custom scrolls */
+    body {
+      background-color: #12100e;
+      color: #f4efea;
+      font-family: 'Outfit', sans-serif;
+    }
+    .custom-glow {
+      box-shadow: 0 0 25px rgba(196, 164, 124, 0.15);
+    }
+    .text-glow {
+      text-shadow: 0 0 10px rgba(229, 196, 159, 0.2);
+    }
+    /* Smart Watch Optimized Styles */
+    @media (max-width: 240px) {
+      .watch-hide { display: none !important; }
+      body { font-size: 10px; padding: 4px; }
+      .watch-text-lg { font-size: 14px !important; }
+      .watch-pad { padding: 4px !important; }
+      .watch-grid { grid-template-columns: 1fr !important; }
+      h1 { font-size: 16px !important; }
+      h2 { font-size: 12px !important; }
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-brand-bg relative overflow-x-hidden min-h-screen flex flex-col justify-between">
+  
+  <!-- Top brand line with ambient glow -->
+  <header class="border-b border-brand-gold/10 bg-brand-bg/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Logo Container -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-card custom-glow group-hover:border-brand-gold-bright transition">
+          <span class="font-serif text-xl font-bold text-brand-gold text-glow group-hover:text-brand-gold-bright">VV</span>
+        </div>
+        <div>
+          <span class="font-serif text-lg tracking-wider font-semibold text-brand-cream block leading-tight">VELVETT VIBES</span>
+          <span class="font-mono text-[9px] tracking-widest text-brand-gold block uppercase leading-none">Studio Lounge</span>
+        </div>
+      </a>
+
+      <!-- Responsive Multi-Page Navigation -->
+      <nav class="flex flex-wrap justify-center gap-y-2 gap-x-5 md:gap-x-7 text-sm font-medium">
+        <a href="index.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Home</a>
+        <a href="about.html" class="text-brand-gold-bright border-b border-brand-gold/80 pb-0.5 transition font-serif tracking-wider">About</a>
+        <a href="music-videos.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Music & Videos</a>
+        <a href="podcasts.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Podcasts</a>
+        <a href="services.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Services</a>
+        <a href="contact.html" class="text-brand-cream-dim hover:text-brand-gold transition font-serif tracking-wider">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-6 md:py-12">
+    
+    <!-- Title Section -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="flex justify-center items-center gap-2 mb-3">
+        <span class="h-px w-6 bg-brand-gold/60"></span>
+        <span class="font-mono text-xs text-brand-gold uppercase tracking-widest">Our Acoustic Story</span>
+        <span class="h-px w-6 bg-brand-gold/60"></span>
+      </div>
+      <h1 class="font-serif text-3xl md:text-5xl font-medium tracking-tight mb-4">Deep listening in a <span class="italic text-brand-gold">high-speed</span> world.</h1>
+      <p class="text-brand-cream-dim font-light text-base md:text-lg">
+        We believe that human legacy is recorded in sound. When you strip out compression, what is left is raw emotion.
+      </p>
+    </div>
+
+    <!-- Column Grid content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-16 watch-grid">
+      
+      <!-- Philosophy Narrative -->
+      <div class="space-y-6">
+        <h2 class="font-serif text-2xl md:text-3xl text-brand-gold font-semibold tracking-wide">The Sound Restoration Movement</h2>
+        <p class="text-brand-cream-dim text-sm md:text-base font-light leading-relaxed">
+          Modern music and streaming channels run at hyper speeds, pushing heavy volume. In the process, our ears lost the subtle air between cello bowings, the warm tube buzz of a direct valve pre-amp, and the majestic decay of a real grand piano in a genuine oak-walled room.
+        </p>
+        <p class="text-brand-cream-dim text-sm md:text-base font-light leading-relaxed">
+          Velvett Vibes was established by veterans who grew up placing sapphire needles into physical vinyl wax grooves. Our mission is helper-driven preservation: writing, mastering, and distributing sound that feels organic and three-dimensional.
+        </p>
+        
+        <div class="border-l-2 border-brand-gold/40 pl-4 py-1 italic font-serif text-brand-cream-dim text-sm md:text-base">
+          "A lifetime of listening teaches you that the sweetest frequencies lie in the middle. We restore voice, stories, and instruments in their natural harmony."
+        </div>
+      </div>
+
+      <!-- Features Card List -->
+      <div class="space-y-4">
+        <div class="bg-brand-card border border-brand-gold/15 p-5 rounded-xl">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+            <h3 class="font-serif text-lg font-bold text-brand-cream">Impeccable Mid-Range Warmth</h3>
+          </div>
+          <p class="text-xs text-brand-cream-dim leading-relaxed pl-5 font-light">
+            We master files using genuine analog tape layers, creating eye and ear comfort for continuous listening without fatigue.
+          </p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-gold/15 p-5 rounded-xl">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+            <h3 class="font-serif text-lg font-bold text-brand-cream">Mature, Timeless Content</h3>
+          </div>
+          <p class="text-xs text-brand-cream-dim leading-relaxed pl-5 font-light">
+            No viral snippets or trending shock narratives. Our conversations dive into literature, high-end design, historical jazz paths, and lifetime business legacies.
+          </p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-gold/15 p-5 rounded-xl">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+            <h3 class="font-serif text-lg font-bold text-brand-cream">Aesthetic Studio Lounges</h3>
+          </div>
+          <p class="text-xs text-brand-cream-dim leading-relaxed pl-5 font-light">
+            Our actual studios located in historic zones are appointed with timber walls, full bookshelves, leather wingbacks, and soft amber lighting to promote comfort and genuine flow.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- REQUIRED CLIENT BANNER: velvett01.png -->
+    <div class="relative bg-brand-card border border-brand-gold/20 rounded-2xl p-4 md:p-8 overflow-hidden mb-12 shadow-inner">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <!-- Visual -->
+        <div class="lg:col-span-5 relative">
+          <img src="velvett01.png" alt="Velvett Vibes Console" class="w-full h-44 object-cover rounded-xl border border-brand-gold/15" onerror="this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=800';">
+          <div class="absolute -bottom-2 -right-2 bg-brand-wine px-3 py-1 rounded border border-brand-gold/30 text-[10px] font-mono tracking-widest text-brand-gold uppercase watch-hide">
+            Analog Setup
+          </div>
+        </div>
+        <!-- Copy -->
+        <div class="lg:col-span-7 whitespace-normal">
+          <div class="font-mono text-[10px] text-brand-gold uppercase tracking-wider mb-2">Our Environment</div>
+          <h3 class="font-serif text-xl md:text-2xl font-semibold text-brand-cream mb-3">Where Velvet Comfort Meets Gold Standards</h3>
+          <p class="text-brand-cream-dim text-xs md:text-sm font-light leading-relaxed mb-4">
+            The banner above shows the custom golden core console of our Velvett Vibes main tracking room. Spatially integrated, acoustic-controlled, with multi-machine compatibility so you can export files to MacOS, Windows, or Linux with absolute phase coherence.
+          </p>
+          <div class="flex items-center gap-6 text-xs text-brand-gold font-mono uppercase">
+            <span>● 5 Studio Nodes</span>
+            <span>● Vintage Neve Soundboards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Foot-rail matching branding specifications exactly -->
+  <footer class="border-t border-brand-gold/10 bg-brand-bg/95 py-6 mt-12 text-center text-xs font-mono text-brand-cream-dim">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-serif text-sm text-brand-cream font-semibold">&copy; 2026 VELVETT VIBES STUDIO. All rights reserved.</p>
+        <p class="text-[10px] text-brand-gold mt-1">Impeccable high-fidelity sound representation for every machine, OS, and smartwatch.</p>
+      </div>
+      <div class="flex gap-4">
+        <!-- Social links mock -->
+        <span class="hover:text-brand-gold cursor-pointer transition">Spotify</span>
+        <span>&bull;</span>
+        <span class="hover:text-brand-gold cursor-pointer transition">Apple Podcasts</span>
+        <span>&bull;</span>
+        <span class="hover:text-brand-gold cursor-pointer transition">YouTube</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Velvett Vibes",
+  "description": "Bespoke media production suite for Velvett Vibes, featuring narrative podcasts, original music videos, and cinematic Nepalese event services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
